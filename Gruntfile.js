@@ -12,6 +12,9 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
+  // for html5mode
+  var modRewrite = require('connect-modrewrite');
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -76,6 +79,8 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              //voor html5mode
+              modRewrite(['^[^\\.]*$ /index.html [L]']),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',

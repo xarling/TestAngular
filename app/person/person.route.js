@@ -5,7 +5,7 @@
   angular.module('person.route', ['ngRoute']).config(function ($routeProvider) {
 
     $routeProvider.when('/person', {
-        templateUrl: 'person.html',
+        templateUrl: 'person/person.html',
         controller: 'PersonController'
       });
 

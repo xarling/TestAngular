@@ -14,14 +14,14 @@ angular.module('app', [
   'ngMessages',
   'ngResource',
   'ngRoute',
-  'ngSanitize'
+  'ngSanitize',
+  'person'
 ]).config(function ($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);
 
   $routeProvider.when('/', {
     templateUrl: 'main.html',
-    controller: 'MainCtrl'
   }).when('/404', {
     templateUrl: '404.html'
   }).otherwise({

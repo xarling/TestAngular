@@ -8,12 +8,15 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+
+  <base href="/">
+
 </head>
 <body ng-app="app">
 <!--[if lt IE 9]>
@@ -57,9 +60,12 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="app.module.js"></script>
+<script src="config/config.module.js"></script>
+
 <script src="person/person.module.js"></script>
 <script src="person/person.controller.js"></script>
 <script src="person/person.route.js"></script>
+<script src="person/person.service.js"></script>
 
 
 <script src="skills/skills.module.js"></script>

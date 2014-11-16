@@ -11,6 +11,6 @@
   };
 
 
-  angular.module('person.controller', ['personService']).controller('PersonController', PersonController);
+  angular.module('person.controller', ['person.service']).controller('PersonController', PersonController);
 
 })();

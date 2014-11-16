@@ -1,0 +1,17 @@
+<h1>Stap 1: Persoon</h1>
+
+
+<form role="form" name="personForm">
+
+  <div class="form-group">
+    <label for="voornaam">Voornaam</label>
+    <input type="text" class="form-control" id="voornaam" name="voornaam" ng-maxlength="60" ng-model="person.firstName">
+
+    <ng-messages for="personForm.voornaam.$error">
+      <ng-message when="required">De voornaam is verplicht</ng-message>
+      <ng-message when="maxlength">De maximale lengte van de voornaam is 60</ng-message>
+    </ng-messages>
+  </div>
+
+
+</form>

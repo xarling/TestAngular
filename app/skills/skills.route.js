@@ -2,10 +2,10 @@
   'use strict';
 
   /** @ngInject */
-  angular.module('skills.route', ['ngRoute']).config(function ($routeProvider) {
+  angular.module('skills.route', ['ngRoute', 'skills.controller']).config(function ($routeProvider) {
     $routeProvider.when('/skills', {
-        templateUrl: 'skills.html',
-        controller: 'SkillsControlller'
+        templateUrl: 'skills/skills.html',
+        controller: 'SkillsController'
       });
   });
 
