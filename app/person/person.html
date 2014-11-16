@@ -1,7 +1,7 @@
 <h1>Stap 1: Persoon</h1>
 
 
-<form role="form" name="personForm">
+<form role="form" name="personForm" novalidate ng-submit="save()">
 
   <div class="form-group">
     <label for="voornaam">Voornaam</label>
@@ -9,9 +9,22 @@
 
     <ng-messages for="personForm.voornaam.$error">
       <ng-message when="required">De voornaam is verplicht</ng-message>
-      <ng-message when="maxlength">De maximale lengte van de voornaam is 60</ng-message>
+      <ng-message when="maxlength"><div class="alert alert-danger">De maximale lengte van de voornaam is 60</div></ng-message>
     </ng-messages>
   </div>
+
+  <div class="form-group">
+    <label for="achternaam">Achternaam</label>
+    <input type="text" class="form-control" id="achternaam" name="achternaam" ng-maxlength="60"
+           ng-model="person.lastName">
+
+    <ng-messages for="personForm.achternaam.$error">
+      <ng-message class="has-error" when="required">De achternaam is verplicht</ng-message>
+      <ng-message when="maxlength">De maximale lengte van de achternaam is 60</ng-message>
+    </ng-messages>
+  </div>
+
+  <input type="submit" value="Volgende">
 
 
 </form>
