@@ -20,13 +20,15 @@ angular.module('app', [
   'person',
   'skills',
   'localstorage',
-  'company'
+  'company',
+  'home'
 ]).config(function ($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);
 
   $routeProvider.when('/', {
-    templateUrl: 'main.html',
+    templateUrl: '/home/home.html',
+    controller: 'HomeController'
   }).when('/404', {
     templateUrl: '404.html'
   }).otherwise({

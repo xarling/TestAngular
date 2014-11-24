@@ -1,3 +1,5 @@
+<span ng-if="!personSaved">
+
 <ol class="breadcrumb">
   <li><a href="/person">Persoon</a></li>
   <li class="active">Skills</li>
@@ -8,9 +10,9 @@
 
 
   <div class="form-group">
-    <input ng-model="selectedSkill" not-in not-in-value="name" not-in-items="{{person.skills}}"
+    <input ng-model="selectedSkill"
            typeahead="skill as skill.name for skill in skills | filter:$viewValue | limitTo:8" class="form-control"
-           typeahead-editable="false" id="selectedSkill" name="selectedSkill"/>
+           typeahead-editable="false" id="selectedSkill" name="selectedSkill" typeahead-on-select="onSelect($item, $model, $label)"/>
 
     <ng-messages for="skillsForm.selectedSkill.$error" ng-messages-include="messages/messages.html"></ng-messages>
   </div>
@@ -40,9 +42,16 @@
 
 <hr>
 
-<form role="form" name="buttonForm" novalidate ng-submit="next()">
+<form role="form" name="buttonForm" novalidate ng-submit="save()">
 
-  <button type="submit" class="btn btn-default">Volgende</button>
+  <button type="submit" class="btn btn-default">Opslaan</button>
 
 
 </form>
+</span>
+
+<span ng-if="personSaved">
+
+  Persoon opgeslagen.
+
+</span>

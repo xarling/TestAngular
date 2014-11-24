@@ -1,17 +1,21 @@
 (function() {
   'use strict';
 
-  var personService = function($resource, config) {
+  var personService = function(personDataService) {
 
-    var person = $resource(config.backendUri);
 
     function getPeople() {
-      return person.query();
+      return personDataService.getPeople();
+    }
+
+    function save(person) {
+      return personDataService.save(person);
     }
 
 
     return {
-      getPeople: getPeople
+      getPeople: getPeople,
+      save: save
     };
 
 

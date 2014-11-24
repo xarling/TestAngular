@@ -1,0 +1,20 @@
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th>Naam</th>
+    <th>Bedrijf</th>
+    <th>Skills</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="person in people | filter:search">
+    <td><span ng-bind="person.firstName"></span> <span ng-bind="person.lastName"></span></td>
+    <td><span ng-bind="person.company"></span></td>
+    <td>
+        <div class="btn btn-default" ng-repeat="skill in person.skills">
+          <span ng-bind="skill.name"></span>
+        </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
