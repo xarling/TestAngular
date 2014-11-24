@@ -2,10 +2,18 @@
   'use strict';
 
   /** @ngInject */
-  var PersonController = function($scope, personService) {
+  var PersonController = function($scope, personService, companyService, $location, person) {
 
-    $scope.savePerson = function() {
+    //TODO: verplaats naar de resolve van de route
+    companyService.getNewNexusCompanies().then(function(data) {
+      $scope.companies = data;
+    });
 
+    $scope.person = person;
+
+
+    $scope.next = function() {
+      $location.path('/skills');
     };
 
   };

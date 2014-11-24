@@ -9,13 +9,18 @@
  * Main module of the application.
  */
 angular.module('app', [
+  'ui.bootstrap',
   'ngAnimate',
   'ngCookies',
   'ngMessages',
   'ngResource',
   'ngRoute',
   'ngSanitize',
-  'person'
+  'validation',
+  'person',
+  'skills',
+  'localstorage',
+  'company'
 ]).config(function ($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);

@@ -1,1 +1,48 @@
-Stap 2: Skills
+<ol class="breadcrumb">
+  <li><a href="/person">Persoon</a></li>
+  <li class="active">Skills</li>
+</ol>
+
+
+<form role="form" name="skillsForm" novalidate ng-submit="addSkill()">
+
+
+  <div class="form-group">
+    <input ng-model="selectedSkill" not-in not-in-value="name" not-in-items="{{person.skills}}"
+           typeahead="skill as skill.name for skill in skills | filter:$viewValue | limitTo:8" class="form-control"
+           typeahead-editable="false" id="selectedSkill" name="selectedSkill"/>
+
+    <ng-messages for="skillsForm.selectedSkill.$error" ng-messages-include="messages/messages.html"></ng-messages>
+  </div>
+  <div class="form-group">
+    <input class="btn btn-primary" type="submit" ng-disabled="skillsForm.selectedSkill.$invalid"
+           value="Skill toevoegen"/>
+  </div>
+</form>
+
+
+<div class="col-md6">
+  <div class="panel panel-default">
+    <div class="panel-heading"> Gekozen skills voor {{person.firstName}}</div>
+    <div class="panel-body">
+
+      <div class="btn btn-default" ng-repeat="skill in person.skills">
+        <span ng-bind="skill.name"></span>&nbsp;
+        <button type="button" class="btn btn-danger btn-sm" ng-click="removeSkill(skill.name)"><span
+          class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<hr>
+
+<form role="form" name="buttonForm" novalidate ng-submit="next()">
+
+  <button type="submit" class="btn btn-default">Volgende</button>
+
+
+</form>

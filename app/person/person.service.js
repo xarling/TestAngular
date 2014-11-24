@@ -5,15 +5,16 @@
 
     var person = $resource(config.backendUri);
 
+    function getPeople() {
+      return person.query();
+    }
+
 
     return {
       getPeople: getPeople
     };
 
 
-    function getPeople() {
-      return person.query();
-    }
 
 
   };

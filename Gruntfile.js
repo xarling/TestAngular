@@ -12,6 +12,8 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-docular');
+
   // for html5mode
   var modRewrite = require('connect-modrewrite');
 
@@ -24,11 +26,21 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  var generatedDocsPath = 'docular_generated';
   // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
     yeoman: appConfig,
+
+    pkg: grunt.file.readJSON('package.json'),
+
+    docular: {
+      docular_webapp_target : generatedDocsPath
+    },
+    docularserver: {
+      targetDir: generatedDocsPath
+    },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -410,4 +422,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('default', ['docular']);
 };

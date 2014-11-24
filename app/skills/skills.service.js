@@ -1,11 +1,10 @@
 (function() {
   'use strict';
 
-  var skillsService = function($resource, config) {
-    var skills = $resource(config.backendUri + '/skills');
+  var skillsService = function(skillsDataService) {
 
     function getSkills() {
-      return skills.query();
+      return skillsDataService.getSkills();
     }
 
     return {
@@ -13,6 +12,6 @@
     };
   };
 
-  angular.module('skills.service', ['ngResource', 'app.config']).factory('skillsService', skillsService);
+  angular.module('skills.service', ['skills.data-service']).factory('skillsService', skillsService);
 
 })();
