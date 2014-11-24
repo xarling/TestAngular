@@ -9,16 +9,18 @@
   function plus() {
     var args = _.toArray(arguments);
 
-    return _.reduce(args, function(accumulator, value) {
+    var result = _.reduce(args, function (accumulator, value) {
       return accumulator + value;
     });
+    this.printer.print('sum is ' + result);
+    return result;
   }
 
   function min() {
 
     var args = _.toArray(arguments);
 
-    return _.reduce(args, function(accumulator, value) {
+    return _.reduce(args, function (accumulator, value) {
       return accumulator - value;
     });
 
@@ -33,7 +35,15 @@
   }
 
 
-  var Calculator = function () {
+  var Calculator = function (printer) {
+    this.printer = printer;
+
+    if (_.isUndefined(this.printer)) {
+      this.printer = {
+        print: console.log
+      };
+    }
+
     this.plus = plus;
     this.min = min;
     this.divide = divide;

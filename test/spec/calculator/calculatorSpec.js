@@ -22,7 +22,10 @@ describe('calculator', function () {
 
     });
 
+    xit('should print sum is 2 with 1 and 1 as parameters', function () {
 
+
+    });
   });
 
   describe('min', function () {
