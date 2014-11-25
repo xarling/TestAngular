@@ -35,6 +35,22 @@
     };
   };
 
-  angular.module('company.data-service', []).factory('companyDataService', dataService);
+  var companyDataResourceService = function ($resource) {
+    var Company = $resource('/company/:id');
+
+    function getCompanies() {
+      return Company.query();
+    }
+
+    return {
+      getCompanies: getCompanies
+    };
+  };
+
+
+  angular.module('company.data-service', ['ngResource']).factory('companyDataService', dataService);
+
+  // purely for testing purposes
+  angular.module('company.data-service').factory('companyDataResourceService', companyDataResourceService);
 
 })();

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var companyService = function(companyDataService, $log) {
+  var companyService = function(companyDataService) {
 
     function getCompanies() {
       return companyDataService.getCompanies();

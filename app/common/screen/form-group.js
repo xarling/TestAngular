@@ -3,7 +3,10 @@
 
   var formGroup = function() {
     return {
-      restrict: 'E'
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: '<div class="form-group" ng-transclude=""></div>'
     };
   };
 
