@@ -31,8 +31,8 @@ module.exports = function(config) {
       // first load all modules
       'app/**/*.module.js',
       'app/**/*.js',
-      'test/mock/**/*.js',
-      'unit/spec/**/*.js'
+      'test/unit/mock/**/*.js',
+      'test/unit/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
