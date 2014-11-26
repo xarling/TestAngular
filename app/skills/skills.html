@@ -10,9 +10,9 @@
 
 
   <div class="form-group">
-    <input ng-model="selectedSkill"
+    <input ng-model="skills.selectedSkill"
            typeahead="skill as skill.name for skill in skills | filter:$viewValue | limitTo:8" class="form-control"
-           typeahead-editable="false" id="selectedSkill" name="selectedSkill" typeahead-on-select="onSelect($item, $model, $label)"/>
+           typeahead-editable="false" id="selectedSkill" name="selectedSkill" />
 
     <ng-messages for="skillsForm.selectedSkill.$error" ng-messages-include="messages/messages.html"></ng-messages>
   </div>

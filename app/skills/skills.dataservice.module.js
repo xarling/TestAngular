@@ -21,7 +21,14 @@
         skills = [
           {'name': 'Java'},
           {'name': 'C#'},
-          {'name': 'Angular'}];
+          {'name': 'Angular'},
+          {'name': 'Ruby'},
+          {'name': 'Javascript'},
+          {'name': 'Ember'},
+          {'name': 'Jasmine'},
+          {'name': 'Faceboeken'},
+          {'name': 'C++'}
+        ];
       }
       localstorage.setObject(SKILLS_KEY, skills);
       return skills;

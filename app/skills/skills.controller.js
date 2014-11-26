@@ -10,16 +10,12 @@
 
     $scope.person = person;
 
-    $scope.onSelect = function(item, $model, $label){
-      $scope.selectedSkill = item;
-    };
 
     $scope.addSkill = function (item) {
-      if (!_.isEmpty($scope.selectedSkill)) {
-
-        $scope.person.skills.push($scope.selectedSkill);
-        _.remove($scope.skills, {'name': $scope.selectedSkill.name});
-        $scope.selectedSkill = null;
+      if (!_.isEmpty($scope.skills.selectedSkill)) {
+        $scope.person.skills.push($scope.skills.selectedSkill);
+        _.remove($scope.skills, {'name': $scope.skills.selectedSkill.name});
+        $scope.skills.selectedSkill = '';
       }
     };
 
